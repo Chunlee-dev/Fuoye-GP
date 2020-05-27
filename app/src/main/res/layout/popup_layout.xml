@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="320dp"
+    android:layout_height="550dp"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:layout_margin="12dp"
+    android:paddingStart="16dp"
+    android:paddingTop="16dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="0dp">
+
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_margin="8dp"
+        android:text="How to use Fuoye GP"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView4"
+        android:layout_margin="8dp"
+        android:text="All the grades field cannot be empty all at the same time."
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView8"
+        android:layout_margin="8dp"
+        android:text="It\'s okay to input your grades at lowercase or uppercase, it really doesn\'t matter."
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textView9a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView9"
+        android:layout_margin="8dp"
+        android:text="If you leave a grade field empty or you input a grade value that is outside this range (A-F, a-f), Fuoye GP assumes you don\'t offer that course."
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView9a"
+        android:layout_margin="8dp"
+        android:text="To support developer, Please kindly click on \'support\' in the side menu and click on the Ad and don't forget to turn on your mobile data while doing that, thanks."
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView10"
+        android:layout_margin="8dp"
+        android:text="To review these guidelines on how to use Fuoye GP, go to the help page because this dialog will appear only once."
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/dismiss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_margin="8dp"
+            android:background="@drawable/rounded_txt"
+            android:padding="12dp"
+            android:text="Dismiss"
+            android:textStyle="bold"
+            android:textColor="@android:color/black" />
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

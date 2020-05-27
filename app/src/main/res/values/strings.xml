@@ -1,0 +1,86 @@
+<resources>
+
+    <string name="app_name">Fuoye GP</string>
+    <string name="subtitle">Fuoye\'s 100 level GP calculator</string>
+    <string name="credit">powered by: Chunlee dev.</string>
+    <string name="nav_about">About</string>
+    <string name="nav_support">Support</string>
+    <string name="nav_fp">FuoyePedia</string>
+    <string name="nav_help">Help &amp; feedback</string>
+    <string name="open">open navigation drawer</string>
+    <string name="close">close navigation drawer</string>
+
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="interstitial_ad_unit_id">ca-app-pub-8730050181970883/7068296418</string>
+    <string name="app_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="app_id_not_test">ca-app-pub-8730050181970883~9282067228</string>
+
+    <string name="mth101">MTH101</string>
+    <string name="mth103">MTH103</string>
+    <string name="phy101">PHY101</string>
+    <string name="phy103">PHY103</string>
+    <string name="phy107">PHY107</string>
+    <string name="chm101">CHM101</string>
+    <string name="chm107">CHM107</string>
+    <string name="bio101">BIO101</string>
+    <string name="bio107">BIO107</string>
+    <string name="gst101">GST101</string>
+    <string name="gst103">GST103</string>
+    <string name="gst105">GST105</string>
+    <string name="cpe101">CPE101</string>
+    <string name="csc101">CSC101</string>
+
+    <string name="mth102">MTH102</string>
+    <string name="mth104">MTH104</string>
+    <string name="phy102">PHY102</string>
+    <string name="phy108">PHY108</string>
+    <string name="chm108">CHM108</string>
+    <string name="chm102">CHM102</string>
+    <string name="bio102">BIO102</string>
+    <string name="bio108">BIO108</string>
+    <string name="gst102">GST102</string>
+    <string name="gst106">GST106</string>
+    <string name="gst108">GST108</string>
+    <string name="gst110">GST110</string>
+    <string name="csc102">CSC102</string>
+    <string name="MEE105">MEE105</string>
+
+    <string name="g">Grade</string>
+
+    <string-array name="grades">
+        <item>Grade</item>
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+        <item>F</item>
+    </string-array>
+
+
+        <string name="one">This app will aid you to calculate you GP efficiently.</string>
+        <string name="two">Please select the Grades of the courses you offer only.</string>
+        <string name="three">If you encounter any problem or bug, feel free to contact us via email or text. 👇</string>
+
+
+    <string name="quote">Fuoye GP is an application that makes it possible to efficiently help Fuoye students calculate their GP with inherent course units.\n\nIt makes it possible to eradicate human errors while trying to calculate students GP as errors in GP calculation could be very detrimental.\n\nNote that Fuoye GP is accessible only by 100 level FUOYE (Federal University oye-ekiti) students at ikole campus but we are working on making it accessible to all levels and campuses.\n\nKindly rate and share with friends. </string>
+    <string name="help_quote">All the grades field cannot be empty.\n\nIt\'s okay to input your grades at lowercase or uppercase, it really doesn\'t matter.\n\nIf you leave a grade field empty or you input a grade value that is outside this range (A-F, a-f), Fuoye GP assumes you donot offer that course.\n\nIf you encounter any problem or bug, feel free to contact us from the About page.\n\n
+Seat back and enjoy!\n</string>
+
+    <string name="by_connect_inc">By Chunlee dev.</string>
+    <string name="tel_08145285552">Tel: 08145285552</string>
+    <string name="load_ads">Load Ads</string>
+    <string name="a_huge_thanks_from_connect_inc">A huge thanks from CONNECT INC.</string>
+    <string name="please_kindly_support_developer_by_clicking_on_the_button_that_say_s_load_ads_and_click_on_the_ads_when_they_load_up">Please, kindly support developer by clicking on the button that say\'s \'Load ads\' and click on the ads when they load up. Don\'t forget to turn on your mobile data.</string>
+    <string name="here_are_some_tips_on_how_to_use_fuoye_gp">Here are guidelines on how to use Fuoye GP</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main0">Main0Activity</string>
+    <string name="tab_text_1">1st Smst</string>
+    <string name="tab_text_2">2nd Smst</string>
+    <string name="tab_text_3">CGPA</string>
+    <string name="_23">23</string>
+
+
+</resources>

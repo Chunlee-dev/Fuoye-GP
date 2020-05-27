@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "495107848021",
+    "firebase_url": "https://fuoye-gp.firebaseio.com",
+    "project_id": "fuoye-gp",
+    "storage_bucket": "fuoye-gp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:495107848021:android:3ab2410bb7374e7e6ba1dc",
+        "android_client_info": {
+          "package_name": "com.chunleedev.fuoyegp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "495107848021-9l1k82n5qhholfv6re0tblck407mtd18.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.chunleedev.fuoyegp",
+            "certificate_hash": "2c585246f20fc30329f2ff72996ac63ee4b75d90"
+          }
+        },
+        {
+          "client_id": "495107848021-lffs5ntgm1mtondcoinfnvqrine16irp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjJj4h2WygDOdyLmIpOX4w2gAH-hwSbfY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "495107848021-lffs5ntgm1mtondcoinfnvqrine16irp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
