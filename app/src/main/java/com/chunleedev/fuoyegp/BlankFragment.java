@@ -2,50 +2,35 @@ package com.chunleedev.fuoyegp;
 
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class BlankFragment extends Fragment {
 
-
-    public BlankFragment() {}
+    private View v;
+    private EditText first_smst_gp, first_smst_units, second_smst_gp, second_smst_units;
+    private double firstGp, secondGp, firstUnit, secondUnit, ans;
+    public BlankFragment() {
+    }
 
     public static BlankFragment newInstance() {
         return new BlankFragment();
     }
 
-
-    private View v;
-    private EditText first_smst_gp, first_smst_units, second_smst_gp, second_smst_units;
-    private double firstGp, secondGp, firstUnit, secondUnit, ans;
-    private Button compute;
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         if (v == null) {
 
             v = inflater.inflate(R.layout.fragment_blank, container, false);
-
-            first_smst_gp = v.findViewById(R.id.first_smst_gp);
-            second_smst_gp = v.findViewById(R.id.second_smst_gp);
-            first_smst_units = v.findViewById(R.id.first_smst_units);
-            second_smst_units = v.findViewById(R.id.second_smst_units);
-
-            compute = v.findViewById(R.id.compute);
 
         }
         return v;
@@ -54,6 +39,14 @@ public class BlankFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+
+        first_smst_gp = v.findViewById(R.id.first_smst_gp);
+        second_smst_gp = v.findViewById(R.id.second_smst_gp);
+        first_smst_units = v.findViewById(R.id.first_smst_units);
+        second_smst_units = v.findViewById(R.id.second_smst_units);
+
+        Button compute = v.findViewById(R.id.compute);
 
         compute.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,14 +65,16 @@ public class BlankFragment extends Fragment {
 
     }
 
-    private void createDialog(double gpa){
+    private void createDialog(double gpa) {
+        if (getContext() == null)
+            return;
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle("Result")
                 .setMessage("GP: " + gpa)
                 .create().show();
     }
 
-    private double approximate(double cgpa){
+    private double approximate(double cgpa) {
 
         if (Double.toString(cgpa).length() >= 5) {
 
@@ -95,8 +90,7 @@ public class BlankFragment extends Fragment {
 
             return value;
 
-        }
-        else {
+        } else {
             return cgpa;
         }
     }

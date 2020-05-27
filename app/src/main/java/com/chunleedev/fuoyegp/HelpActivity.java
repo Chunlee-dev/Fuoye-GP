@@ -1,17 +1,14 @@
 package com.chunleedev.fuoyegp;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ListView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class HelpActivity extends AppCompatActivity {
 
@@ -33,7 +30,7 @@ public class HelpActivity extends AppCompatActivity {
         email.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-             sendToGMailz();
+                sendToGMailz();
             }
         });
 
@@ -50,13 +47,12 @@ public class HelpActivity extends AppCompatActivity {
         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://wa.me/2348145285552?text=Purpose:%20Fuoye%20GP:%20")));
     }
 
-    private void sendToGMailz(){
-        try{
-            Intent intent = new Intent (Intent.ACTION_VIEW , Uri.parse("mailto:" + "iamcodebusy@gmail.com"));
+    private void sendToGMailz() {
+        try {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + "iamcodebusy@gmail.com"));
             intent.putExtra(Intent.EXTRA_TEXT, "Fuoye GP");
             startActivity(intent);
-        }catch(ActivityNotFoundException e){
-            //TODO smth
+        } catch (ActivityNotFoundException e) {
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("gmail.com")));
             e.printStackTrace();
         }

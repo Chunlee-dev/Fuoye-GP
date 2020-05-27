@@ -18,41 +18,17 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class FirstSemester extends Fragment {
 
-    public FirstSemester() {
-        // Required empty public constructor
-    }
-
-
-    public static FirstSemester newInstance() {
-        return new FirstSemester();
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
-
     private View view;
-    private FloatingActionButton fab;
-
     private Spinner grade1, grade2, grade3, grade4, grade5, grade6, grade7, grade8, grade9, grade10, grade11,
             grade12, grade13, grade14;
-
     private int grade1Val, grade2Val, grade3Val, grade4Val, grade5Val, grade6Val, grade7Val,
             grade8Val, grade9Val, grade10Val, grade11Val, grade12Val, grade13Val, grade14Val;
-
     private int coursePoint1, coursePoint2, coursePoint3, coursePoint4, coursePoint5, coursePoint6, coursePoint7,
             coursePoint8, coursePoint9, coursePoint10, coursePoint11, coursePoint12, coursePoint13, coursePoint14;
-
-
     private int coursePointTotal, courseUnitTotal;
-
     private double gp;
-
     private String grade1String, grade2String, grade3String, grade4String, grade5String, grade6String, grade7String,
             grade8String, grade9String, grade10String, grade11String, grade12String, grade13String, grade14String;
-
     private int courseUnit1 = 3;
     private int courseUnit2 = 3;
     private int courseUnit3 = 3;
@@ -67,12 +43,34 @@ public class FirstSemester extends Fragment {
     private int courseUnit12 = 1;
     private int courseUnit13 = 2;
     private int courseUnit14 = 2;
+    public FirstSemester() {
+        // Required empty public constructor
+    }
 
+    public static FirstSemester newInstance() {
+        return new FirstSemester();
+    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        FloatingActionButton fab = view.findViewById(R.id.fab);
+
+        grade1 = view.findViewById(R.id.grade1);
+        grade2 = view.findViewById(R.id.grade2);
+        grade3 = view.findViewById(R.id.grade3);
+        grade4 = view.findViewById(R.id.grade4);
+        grade5 = view.findViewById(R.id.grade5);
+        grade6 = view.findViewById(R.id.grade6);
+        grade7 = view.findViewById(R.id.grade7);
+        grade8 = view.findViewById(R.id.grade8);
+        grade9 = view.findViewById(R.id.grade9);
+        grade10 = view.findViewById(R.id.grade10);
+        grade11 = view.findViewById(R.id.grade11);
+        grade12 = view.findViewById(R.id.grade12);
+        grade13 = view.findViewById(R.id.grade13);
+        grade14 = view.findViewById(R.id.grade14);
 
         String[] courses = getResources().getStringArray(R.array.grades);
 
@@ -132,8 +130,7 @@ public class FirstSemester extends Fragment {
 
                 if (grade1Val == -1 && grade2Val == -1 && grade3Val == -1 && grade4Val == -1 && grade5Val == -1 && grade6Val == -1 && grade7Val == -1 && grade8Val == -1 && grade9Val == -1 && grade10Val == -1 && grade11Val == -1 && grade12Val == -1 && grade13Val == -1 && grade14Val == -1) {
                     Toast.makeText(getContext(), "Please select your grades first!", Toast.LENGTH_LONG).show();
-                }
-                else {
+                } else {
                     if (grade1Val == -1) {
                         courseUnit1 = 0;
                         grade1Val = 0;
@@ -285,25 +282,7 @@ public class FirstSemester extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         if (view == null) {
-
             view = inflater.inflate(R.layout.fragment_first_semester, container, false);
-            fab = view.findViewById(R.id.fab);
-
-            grade1 = view.findViewById(R.id.grade1);
-            grade2 = view.findViewById(R.id.grade2);
-            grade3 = view.findViewById(R.id.grade3);
-            grade4 = view.findViewById(R.id.grade4);
-            grade5 = view.findViewById(R.id.grade5);
-            grade6 = view.findViewById(R.id.grade6);
-            grade7 = view.findViewById(R.id.grade7);
-            grade8 = view.findViewById(R.id.grade8);
-            grade9 = view.findViewById(R.id.grade9);
-            grade10 = view.findViewById(R.id.grade10);
-            grade11 = view.findViewById(R.id.grade11);
-            grade12 = view.findViewById(R.id.grade12);
-            grade13 = view.findViewById(R.id.grade13);
-            grade14 = view.findViewById(R.id.grade14);
-
         }
 
         return view;
@@ -331,14 +310,16 @@ public class FirstSemester extends Fragment {
         return multiplier;
     }
 
-    private void createDialog(double gpa){
+    private void createDialog(double gpa) {
+        if (getContext() == null)
+            return;
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle("Result")
                 .setMessage("GP: " + gpa)
                 .create().show();
     }
 
-    private double approximate(double cgpa){
+    private double approximate(double cgpa) {
 
         if (Double.toString(cgpa).length() >= 5) {
 
@@ -354,8 +335,7 @@ public class FirstSemester extends Fragment {
 
             return value;
 
-        }
-        else {
+        } else {
             return cgpa;
         }
     }

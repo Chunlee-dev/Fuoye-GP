@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:windowSoftInputMode="adjustResize"
             android:name=".Main0Activity"
             android:label="@string/title_activity_main0"
             android:theme="@style/AppTheme.NoActionBar">

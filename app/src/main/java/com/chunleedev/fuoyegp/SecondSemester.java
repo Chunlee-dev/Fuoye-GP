@@ -1,12 +1,6 @@
 package com.chunleedev.fuoyegp;
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.fragment.app.Fragment;
-
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,40 +10,27 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class SecondSemester extends Fragment {
 
-    public SecondSemester() {}
-
-    public static SecondSemester newInstance() {
-        return new SecondSemester();
-    }
-
-
     private View view;
-
-    private FloatingActionButton fab;
-
     private EditText currentCgpaEdt, totalCourseUnitsEdt;
-
     private Spinner grade1, grade2, grade3, grade4, grade5, grade6, grade7, grade8, grade9, grade10, grade11,
             grade12, grade13, grade14;
-
     private int grade1Val, grade2Val, grade3Val, grade4Val, grade5Val, grade6Val, grade7Val,
             grade8Val, grade9Val, grade10Val, grade11Val, grade12Val, grade13Val, grade14Val;
-
     private int coursePoint1, coursePoint2, coursePoint3, coursePoint4, coursePoint5, coursePoint6, coursePoint7,
             coursePoint8, coursePoint9, coursePoint10, coursePoint11, coursePoint12, coursePoint13, coursePoint14;
-
     private int coursePointTotal, courseUnitTotal;
-
     private double gp;
-
     private String grade1String, grade2String, grade3String, grade4String, grade5String, grade6String, grade7String,
             grade8String, grade9String, grade10String, grade11String, grade12String, grade13String, grade14String;
-
-
     private int courseUnit1 = 3;
     private int courseUnit2 = 3;
     private int courseUnit3 = 3;
@@ -65,33 +46,18 @@ public class SecondSemester extends Fragment {
     private int courseUnit13 = 2;
     private int courseUnit14 = 2;
 
+    public SecondSemester() {
+    }
+
+    public static SecondSemester newInstance() {
+        return new SecondSemester();
+    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         if (view == null) {
-
             view = inflater.inflate(R.layout.fragment_second_semester, container, false);
-            fab = view.findViewById(R.id.fabx);
-
-            currentCgpaEdt = view.findViewById(R.id.current_cgpa);
-            totalCourseUnitsEdt = view.findViewById(R.id.course_units_total);
-
-            grade1 = view.findViewById(R.id.grade1x);
-            grade2 = view.findViewById(R.id.grade2x);
-            grade3 = view.findViewById(R.id.grade3x);
-            grade4 = view.findViewById(R.id.grade4x);
-            grade5 = view.findViewById(R.id.grade5x);
-            grade6 = view.findViewById(R.id.grade6x);
-            grade7 = view.findViewById(R.id.grade7x);
-            grade8 = view.findViewById(R.id.grade8x);
-            grade9 = view.findViewById(R.id.grade9x);
-            grade10 = view.findViewById(R.id.grade10x);
-            grade11 = view.findViewById(R.id.grade11x);
-            grade12 = view.findViewById(R.id.grade12x);
-            grade13 = view.findViewById(R.id.grade13x);
-            grade14 = view.findViewById(R.id.grade14x);
-
         }
         return view;
     }
@@ -100,10 +66,30 @@ public class SecondSemester extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        FloatingActionButton fab = view.findViewById(R.id.fabx);
+
+        currentCgpaEdt = view.findViewById(R.id.current_cgpa);
+        totalCourseUnitsEdt = view.findViewById(R.id.course_units_total);
+
+        grade1 = view.findViewById(R.id.grade1x);
+        grade2 = view.findViewById(R.id.grade2x);
+        grade3 = view.findViewById(R.id.grade3x);
+        grade4 = view.findViewById(R.id.grade4x);
+        grade5 = view.findViewById(R.id.grade5x);
+        grade6 = view.findViewById(R.id.grade6x);
+        grade7 = view.findViewById(R.id.grade7x);
+        grade8 = view.findViewById(R.id.grade8x);
+        grade9 = view.findViewById(R.id.grade9x);
+        grade10 = view.findViewById(R.id.grade10x);
+        grade11 = view.findViewById(R.id.grade11x);
+        grade12 = view.findViewById(R.id.grade12x);
+        grade13 = view.findViewById(R.id.grade13x);
+        grade14 = view.findViewById(R.id.grade14x);
+
 
         String[] courses = getResources().getStringArray(R.array.grades);
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, courses);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, courses);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
 
         grade1.setAdapter(arrayAdapter);
@@ -159,8 +145,7 @@ public class SecondSemester extends Fragment {
 
                 if (grade1Val == -1 && grade2Val == -1 && grade3Val == -1 && grade4Val == -1 && grade5Val == -1 && grade6Val == -1 && grade7Val == -1 && grade8Val == -1 && grade9Val == -1 && grade10Val == -1 && grade11Val == -1 && grade12Val == -1 && grade13Val == -1 && grade14Val == -1) {
                     Toast.makeText(getContext(), "Please select your grades first!", Toast.LENGTH_LONG).show();
-                }
-                else {
+                } else {
 
                     double currentCgpa =
                             TextUtils.isEmpty(currentCgpaEdt.getText().toString()) ?
@@ -170,11 +155,9 @@ public class SecondSemester extends Fragment {
                             TextUtils.isEmpty(totalCourseUnitsEdt.getText().toString()) ?
                                     0.0 : Double.parseDouble(totalCourseUnitsEdt.getText().toString());
 
-                    if ((TextUtils.isEmpty(currentCgpaEdt.getText().toString()) && !TextUtils.isEmpty(totalCourseUnitsEdt.getText().toString())) || (!TextUtils.isEmpty(currentCgpaEdt.getText().toString()) && TextUtils.isEmpty(totalCourseUnitsEdt.getText().toString())))
-                    {
+                    if ((TextUtils.isEmpty(currentCgpaEdt.getText().toString()) && !TextUtils.isEmpty(totalCourseUnitsEdt.getText().toString())) || (!TextUtils.isEmpty(currentCgpaEdt.getText().toString()) && TextUtils.isEmpty(totalCourseUnitsEdt.getText().toString()))) {
                         Toast.makeText(getContext(), "Please fill in both fields", Toast.LENGTH_LONG).show();
-                    }
-                    else {
+                    } else {
                         if (grade1Val == -1) {
                             courseUnit1 = 0;
                             grade1Val = 0;
@@ -347,14 +330,16 @@ public class SecondSemester extends Fragment {
         return multiplier;
     }
 
-    private void createDialog(double gpa){
+    private void createDialog(double gpa) {
+        if (getContext() == null)
+            return;
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle("Result")
                 .setMessage("GP: " + gpa)
                 .create().show();
     }
 
-    private double approximate(double cgpa){
+    private double approximate(double cgpa) {
 
         if (Double.toString(cgpa).length() >= 5) {
 
@@ -370,10 +355,9 @@ public class SecondSemester extends Fragment {
 
             return value;
 
-        }
-        else {
+        } else {
             return cgpa;
         }
     }
-    
+
 }
